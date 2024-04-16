@@ -24,7 +24,7 @@
     "plugins": [
         "react",
         "@typescript-eslint",
-        "plugin:prettier/recommend"
+        "plugin:prettier/recommended"
     ],
     "rules": {
       "react-hooks/rules-of-hooks": "error",
@@ -37,7 +37,7 @@
     },
     "settings": {
       "react": {
-        "vesion": "detect"
+        "version": "detect"
       }
     }
 }
