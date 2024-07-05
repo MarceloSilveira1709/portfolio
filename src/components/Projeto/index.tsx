@@ -1,15 +1,37 @@
-
+import React, { useState } from 'react';
 import Paragrafo from "../Paragrafo";
-import Titulo from "../Titulo";
+import { Card, LinkBotao } from './styles';
 
-import { Card, LinkBotao } from './styles'
 
-const Projeto = () => (
-  <Card>
-    <Titulo>Projeto Lista de tarefas</Titulo>
-    <Paragrafo tipo="secundario">Lista de tarefas feira com VueJS</Paragrafo>
-    <LinkBotao>Visualizar</LinkBotao>
-  </Card>
-)
+type Props = {
+  titulo: string;
+  descricao: string;
+  link: string;
+  imagem: string;
+};
 
-export  default Projeto
+const Projeto = ({ titulo, descricao, link, imagem }: Props) => {
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  const toggleZoom = () => {
+    setIsZoomed(!isZoomed); {/*atualiza o estado */}
+  };
+
+  return (
+    <Card>
+      <div className="image-container">
+        <img
+          src={imagem}
+          alt={titulo}
+          className={`card-imagem ${isZoomed ? 'zoomed' : ''}`}
+          title={isZoomed ? "Clique para fechar a imagem" : "Clique para ampliar a imagem"}
+          onClick={toggleZoom}
+        />
+      </div>
+      <Paragrafo tipo="secundario">{descricao}</Paragrafo>
+      <LinkBotao href={link} target="_blank">Visitar</LinkBotao>
+    </Card>
+  );
+};
+
+export default Projeto;
