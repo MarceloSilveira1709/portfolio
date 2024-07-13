@@ -7,6 +7,7 @@ import Sobre from './containers/Sobre'
 import EstiloGlobal, { Container } from './styles'
 import temaLight from './themes/light'
 import temaDark from './themes/dark'
+import Rodape from './containers/Rodape'
 
 
 
@@ -28,7 +29,7 @@ function App() {
         <Projetos/>
       </main>
     </Container>
-
+    <Rodape/>
     </ThemeProvider>
 
 
